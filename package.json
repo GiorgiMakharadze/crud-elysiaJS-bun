@@ -9,7 +9,8 @@
   "dependencies": {
     "@elysiajs/html": "^0.8.0",
     "@elysiajs/static": "^0.8.1",
-    "elysia": "latest"
+    "elysia": "latest",
+    "prettier": "^3.5.2"
   },
   "devDependencies": {
     "bun-types": "latest"

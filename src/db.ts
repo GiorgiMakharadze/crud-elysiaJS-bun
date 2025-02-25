@@ -1,6 +1,5 @@
 import Database from "bun:sqlite";
-import { I } from "elysia/dist/index-3yRrZCrW";
-import { IProduct } from "./interfaces/product.interface";
+import { IProduct } from "./interfaces/product.interfaces";
 
 export class ProductsDatabase {
   private db: Database;
@@ -11,24 +10,30 @@ export class ProductsDatabase {
   }
 
   fetchAllProducts() {
-    return this.db.query("SELECT * FROM products").all() as IProduct[];
+    return this.db.query(`SELECT * FROM products`).all();
   }
 
-  updateProduct(id: number, product: IProduct) {
+  addproduct(product: IProduct) {
     return this.db
-      .query("UPDATE products SET name = ?, price = ?, image = ? WHERE id = ?")
-      .run(product.name, product.price, product.image, id);
+      .query(
+        `INSERT INTO products(name, price, image) VALUES(?,?,?) RETURNING id`,
+      )
+      .get(product.name, product.price, product.image) as IProduct;
+  }
+
+  updateproduct(id: number, product: IProduct) {
+    return this.db.run(
+      `UPDATE products SET name='${product.name}', price='${product.price}', image='${product.image}' WHERE id=${id}`,
+    );
+  }
+
+  deleteproduct(id: number) {
+    return this.db.run(`DELETE FROM products WHERE id=${id}`);
   }
 
   createTable() {
-    "CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price NUM, image TEXT)";
-  }
-
-  addProduct(product: IProduct) {
-    return this.db
-      .query(
-        `INSERT INTO products (name, price, image) VALUES (?, ?, ?) RETURNING id`,
-      )
-      .get(product.name, product.price, product.image) as IProduct;
+    return this.db.run(
+      "CREATE TABLE IF NOT EXISTS products(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, price NUM, image TEXT)",
+    );
   }
 }
