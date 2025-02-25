@@ -1,1 +1,1 @@
-*.html -diff linguist-language=HTML
+public/*.html linguist-vendored
