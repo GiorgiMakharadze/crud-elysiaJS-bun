@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="../style/index.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
+
+        <script src="/script.js"> 
+        </script>
+    </head>
+    <body class="body-bg">
+        <nav class="navbar navbar-expand-lg bg-dark custom-nav-bg ">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse d-flex justify-content-between">
+                    <ul class="navbar-nav ">
+                        <li class='nav-item'>
+                            <a class="nav-link text-light fs-4 px-3" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light fs-4 px-3" href="/add-product">Add Product</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div>
+            <div class="card-container pt-3" id="productsContainer">
+                
+                <div class="card m-3 custom-card">
+                    <img src="../images/apples.jpg" class="card-img-top card-image" alt="apples">
+                    <div class="card-body">
+                        <div class="name-price-contianer">
+                            <h3 class="card-title"> Apple </h3>
+                            <h4 class="card-title  fw-light"> $30 </h4>
+                        </div>
+                        <div>
+                            <a href="/edit" class="btn btn-outline-dark mx-1 mt-4 edit-buttons">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                            <a class="btn btn-outline-dark mx-1 mt-4 edit-buttons" onclick="deleteHandler()">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card m-3 custom-card">
+                    <img src="../images/bananas.jpg" class="card-img-top card-image" alt="bananas">
+                    <div class="card-body">
+                        <div class="name-price-contianer">
+                            <h3 class="card-title"> Bananas </h3>
+                            <h4 class="card-title  fw-light"> $20 </h4>
+                        </div>
+                        <div>
+                            <a href="/edit" class="btn btn-outline-dark mx-1 mt-4 edit-buttons">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                            <a class="btn btn-outline-dark mx-1 mt-4 edit-buttons" onclick="deleteHandler()">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card m-3 custom-card">
+                    <img src="../images/orange.jpg" class="card-img-top card-image" alt="orange">
+                    <div class="card-body">
+                        <div class="name-price-contianer">
+                            <h3 class="card-title"> Orange </h3>
+                            <h4 class="card-title  fw-light"> $35 </h4>
+                        </div>
+                        <div>
+                            <a href="/edit" class="btn btn-outline-dark mx-1 mt-4 edit-buttons">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                            <a class="btn btn-outline-dark mx-1 mt-4 edit-buttons" onclick="deleteHandler()">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card m-3 custom-card">
+                    <img src="../images/pineapple.jpg" class="card-img-top card-image" alt="pineapple">
+                    <div class="card-body">
+                        <div class="name-price-contianer">
+                            <h3 class="card-title"> Pineapple </h3>
+                            <h4 class="card-title  fw-light"> $38 </h4>
+                        </div>
+                        <div>
+                            <a href="/edit" class="btn btn-outline-dark mx-1 mt-4 edit-buttons">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                            <a class="btn btn-outline-dark mx-1 mt-4 edit-buttons" onclick="deleteHandler()">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+
+</html>
